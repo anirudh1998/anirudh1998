@@ -1,0 +1,22 @@
+int butt=9;
+int counter=0;
+int buttstate=0;
+
+void setup() {
+  pinMode(butt,INPUT);
+  Serial.begin(9600);
+  }
+
+void loop()
+{
+  buttstate= digitalRead(butt);
+  if(buttstate==LOW)
+   {
+    counter=counter+1;
+    Serial.println("on");
+    Serial.println("number of times button pushed"+counter);
+   }
+   if(counter==10)
+   counter=0;
+delay(50);
+}
